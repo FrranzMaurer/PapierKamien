@@ -1,7 +1,7 @@
 {
-  "name": "nauka-gita-2",
+  "name": "PapierKamien",
   "version": "1.0.0",
-  "description": "https://frranzmaurer.github.io/nauka-gita-2/",
+  "description": "https://github.com/FrranzMaurer/PapierKamien",
   "main": "index.js",
   "scripts": {
     "test": "npm-run-all test:*",
@@ -22,15 +22,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FrranzMaurer/nauka-gita-2.git"
+    "url": "git+https://github.com/FrranzMaurer/PapierKamien.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FrranzMaurer/nauka-gita-2/issues"
+    "url": "https://github.com/FrranzMaurer/PapierKamien/issues"
   },
-  "homepage": "https://github.com/FrranzMaurer/nauka-gita-2#readme",
+  "homepage": "https://github.com/FrranzMaurer/PapierKamien#readme",
   "devDependencies": {
     "autoprefixer-cli": "^1.0.0",
     "browser-sync": "^2.23.7",

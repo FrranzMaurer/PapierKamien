@@ -10,9 +10,13 @@ var compScore = 0;
 var rounds;
 var newgame = document.getElementById('new-game');
 
-var playerChoiceNode = document.getElementsByTagName('button');
-var playerChoice = [...playerChoiceNode];
-document.write(playerChoice);
+var playerChoice = document.querySelectorAll('.player-move');
+for (var i = 0; i < playerChoice.length; i++) {
+  var playerMove = playerChoice[i].getAttribute("data-move");
+  document.write(playerMove);
+  };
+
+
 
 
 var rounds2win = document.getElementById('rounds-to-win');
