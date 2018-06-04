@@ -8,13 +8,15 @@ var compChoice;
 var newgame = document.getElementById('new-game');
 
 var params = {
-  rounds: null,
+  rounds: 0,
   playerScore: 0,
   compScore: 0,
-  progress: [
+  };
+
+var progress = {
     totalPlayerScore: 0,
     totalCompScore: 0,
-    totalRounds: 0];
+    totalRounds: 0,
   };
 
 var rounds2win = document.getElementById('rounds-to-win');
@@ -24,7 +26,7 @@ var choices = {
   scissors: 'nożyce'
 }
 
-var compare = function(player, compChoice) {
+var compare = function() {
   if (player === compChoice) {
     output.innerHTML = "Remis" + "<br>";
   } 
@@ -112,9 +114,8 @@ newgame.addEventListener('click', function(){
 });
 
 function clearGame () {
-    params.playerScore = 0;
-    params.compScore = 0;
-    round = 0;
+    document.querySelector('#modal-one').classList.remove('show');
+    document.querySelector('#modal-two').classList.remove('show');
     output.innerHTML =
     params.playerScore +
     " : " +
@@ -123,22 +124,27 @@ function clearGame () {
     "Runda " +
     round +
     "<br>";
+    params.playerScore = 0;
+    params.compScore = 0;
+    round = 0;
 }
 
 function win () {
   if (params.playerScore == params.rounds) {
+    clearGame ();
+    progress.totalRounds = progress.totalRounds + 1;
+    progress.totalPlayerScore = progress.totalPlayerScore + 1;
+    document.getElementById('content-one').innerHTML = "Liczba gier: " + progress.totalRounds + "<br>" + "Gracz: " + progress.totalPlayerScore + "<br>" + "Komputer: " + progress.totalCompScore;
     document.getElementById('modal-overlay').classList.add('show');
     document.getElementById('modal-one').classList.add('show');
-    totalRounds = totalRounds + 1;
-    totalPlayerScore = totalPlayerScore + 1;
-    clearGame ();
   }
   else if (params.compScore == params.rounds) {
+    clearGame ();
+    progress.totalRounds = progress.totalRounds + 1;
+    progress.totalCompScore = progress.totalCompScore + 1;
+    document.getElementById('content-two').innerHTML = "Liczba gier: " + progress.totalRounds + "<br>" + "Gracz: " + progress.totalPlayerScore + "<br>" + "Komputer: " + progress.totalCompScore;
     document.getElementById('modal-overlay').classList.add('show');
     document.getElementById('modal-two').classList.add('show');
-    totalRounds = totalRounds + 1;
-    totalCompScore = totalCompScore + 1;
-    clearGame ();
   }
 }
 
